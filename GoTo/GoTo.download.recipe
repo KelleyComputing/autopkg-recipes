@@ -5,11 +5,13 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest x86 version of GoTo.</string>
+	<string>Downloads the latest version of GoTo. Use ARCH values `x86_64` or `arm64` to distinguish between versions.</string>
 	<key>Identifier</key>
-	<string>com.github.KelleyComputing.download.GoTo_x86</string>
+	<string>com.github.KelleyComputing.download.GoTo</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>x86_64</string>
 		<key>NAME</key>
 		<string>GoTo</string>
 	</dict>
@@ -20,10 +22,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>architecture</key>
+				<string>%ARCH%</string>
+			</dict>
+			<key>Processor</key>
+			<string>GoToURLProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>https://goto-desktop.goto.com/GoTo.dmg</string>
+				<string>%NAME%_%ARCH%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

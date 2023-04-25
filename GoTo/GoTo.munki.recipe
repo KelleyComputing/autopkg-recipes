@@ -5,15 +5,17 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest x86 version of GoTo and imports it into Munki, with arguments to restrict it from being installed on arm machines.</string>
+	<string>Downloads the latest version of GoTo and imports it in to Munki. Use ARCH values `x86_64` or `arm64` to distinguish between versions. Add exclusion to munki to stop x86 version from installing on ARM if desired.</string>
 	<key>Identifier</key>
-	<string>com.github.KelleyComputing.munki.GoTo_x86</string>
+	<string>com.github.KelleyComputing.munki.GoTo</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>x86_64</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>GoTo_x86</string>
+		<string>GoTo</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -30,18 +32,16 @@
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
-    			<key>supported_architectures</key>
+			<key>supported_architectures</key>
          		<array>
-            			<string>x86_64</string>
+            		<string>%ARCH%</string>
          		</array>
-         		<key>installable_condition</key>
-         		<string>NOT arch BEGINSWITH "arm"</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.KelleyComputing.download.GoTo_x86</string>
+	<string>com.github.KelleyComputing.download.GoTo</string>
 	<key>Process</key>
 	<array>
 		<dict>
