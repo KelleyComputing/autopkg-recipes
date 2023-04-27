@@ -9,13 +9,13 @@ class GoToURLProvider(Processor):
     input_variables = {
         "architecture": {
             "required": False,
-            "description": "Architecture of the R package to download. "
+            "description": "Architecture of the GoTo package to download. "
             "Possible values are 'x86_64' (Intel) or 'arm64' (Apple Silicon). "
             "Defaults to 'x86_64' (Intel).",
         },
     }
     output_variables = {
-        "url": {"description": "URL to the latest R release."},
+        "url": {"description": "URL to the latest GoTo Connect release."},
     }
     description = __doc__
 
