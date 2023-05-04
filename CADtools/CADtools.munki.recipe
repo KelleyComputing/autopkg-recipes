@@ -21,9 +21,9 @@
 			<key>description</key>
 			<string></string>
 			<key>developer</key>
-			<string></string>
+			<string>HotDoor</string>
 			<key>display_name</key>
-			<string>CADtools</string>
+			<string>Install CADtools 13</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
