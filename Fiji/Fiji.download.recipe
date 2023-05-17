@@ -20,21 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>result_output_var_name</key>
-				<string>VERSION</string>
-				<key>url</key>
-				<string>https://downloads.imagej.net/fiji/releases/</string>
-			</dict>
-			<key>Processor</key>
-			<string>FijiVersionFinder</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.zip</string>
+				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>https://downloads.imagej.net/fiji/releases/%version%/fiji-%version%-macosx.zip</string>
+				<string>https://downloads.imagej.net/fiji/latest/fiji-macosx.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
