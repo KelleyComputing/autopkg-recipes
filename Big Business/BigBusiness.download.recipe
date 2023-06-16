@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Big Business.</string>
+	<key>Identifier</key>
+	<string>com.github.KelleyComputing.download.BigBusiness</string>
+	<key>Input</key>
+	<dict>
+        <key>PRODUCT_NAME</key>
+        <string>bbclient</string>
+        <key>MAJOR_VERSION</key>
+        <string>13</string>
+        <key>BASE_URL</key>
+        <string>https://www.bigbusiness.com/download/</string>
+        <key>DOWNLOAD_URL</key>
+        <string>%BASE_URL%/%MAJOR_VERSION%/</string>
+        <key>MINOR_VERSION_RE_PATTERN</key>
+        <string>/download/(\w+)/%PRODUCT_NAME%%MAJOR_VERSION%(\w+).zip</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+                <key>re_pattern</key>
+                <string>%MINOR_VERSION_RE_PATTERN%</string>
+                <key>url</key>
+                <string>%DOWNLOAD_URL%</string>
+                <key>result_output_var_name</key>
+                <string>MINOR_VERSION</string>
+                <key>url</key>
+                <string>%DOWNLOAD_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+                <key>url</key>
+                <string>%BASE_URL%/%MAJOR_VERSION%%MINOR_VERSION%/%PRODUCT_NAME%%MAJOR_VERSION%%MINOR_VERSION%.zip</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
