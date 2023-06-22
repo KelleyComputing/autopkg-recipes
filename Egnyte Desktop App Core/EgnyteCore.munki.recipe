@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest Google Chrome disk image and imports into Munki.</string>
+    <string>Downloads the latest Egnyte Desktop App Core package and imports into Munki.</string>
     <key>Identifier</key>
     <string>com.github.KelleyComputing.munki.EgnyteCore</string>
     <key>Input</key>
