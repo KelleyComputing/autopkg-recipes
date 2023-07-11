@@ -25,11 +25,7 @@
 				<key>url</key>
 				<string>https://orangedatamining.com/download/</string>
 				<key>re_pattern</key>
-				<string>a id="recommended-download-mac".*\n*?.*href="(?P&lt;download_url&gt;.*)"</string>
-				<key>re_flags</key>
-				<array>
-					<string>MULTILINE</string>
-				</array>
+				<string>(?P&lt;download_url&gt;https://download.biolab.si/download/files/Orange.*?Python.*?.dmg)</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
