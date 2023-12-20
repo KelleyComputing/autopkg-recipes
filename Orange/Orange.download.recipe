@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot). For x86 ARCH should be set to `x86_64` and ARCH_FNAME to `Orange3`. Additionally an exclusion to prevent installation on arm machines is desirable if both versions are to exist. For ARM version, ARCH should be set to `arm64`, and ARCH_FNAME to `Orange`</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Orange.</string>
 	<key>Identifier</key>
@@ -12,6 +12,8 @@
 	<dict>
 		<key>ARCH</key>
 		<string>x86_64</string>
+		<key>ARCH_FNAME</key>
+		<string>Orange3</string>
 		<key>APP_FILENAME</key>
 		<string>Orange3</string>
 		<key>NAME</key>
@@ -51,7 +53,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Orange3.app</string>
+				<string>%pathname%/%ARCH_FNAME%.app</string>
 				<key>requirement</key>
 				<string>identifier "si.biolab.orange" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "556DY3FJ29"</string>
 			</dict>
@@ -62,7 +64,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Orange3.app/Contents/Info.plist</string>
+				<string>%pathname%/%ARCH_FNAME%.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
