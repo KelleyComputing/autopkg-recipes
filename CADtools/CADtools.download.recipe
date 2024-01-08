@@ -12,6 +12,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>CADtools</string>
+		<key>CADTOOLS_VERSION</key>
+		<string>14</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -21,9 +23,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>CADtools13.zip</string>
+				<string>CADtools%CADTOOLS_VERSION%.zip</string>
 				<key>url</key>
-				<string>https://www.hotdoor.com/downloads/HD/CADT/Mac/CADtools13.zip</string>
+				<string>https://www.hotdoor.com/downloads/HD/CADT/Mac/CADtools%CADTOOLS_VERSION%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
