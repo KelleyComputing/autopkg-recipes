@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Download the latest version of Fathom. Use `x64` or `arm64` to select architecture.</string>
+	<key>Identifier</key>
+	<string>com.github.KelleyComputing.download.Fathom</string>
+	<key>Input</key>
+	<dict>
+		<key>ARCH</key>
+		<string>arm64</string>
+		<key>NAME</key>
+		<string>Fathom</string>
+		<key>PRODUCT_URL</key>
+		<string>https://fathom.video/download</string>
+		<key>DOWNLOAD_BASE_URL</key>
+		<string>https://storage.googleapis.com/electron_releases</string>
+		<key>VERSION_RE_PATTERN</key>
+		<string>%NAME%-darwin-%ARCH%-([\d.]+).dmg</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+                <key>re_pattern</key>
+                <string>%VERSION_RE_PATTERN%</string>
+                <key>url</key>
+                <string>%PRODUCT_URL%</string>
+                <key>result_output_var_name</key>
+                <string>VERSION</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+                <key>url</key>
+                <string>%DOWNLOAD_BASE_URL%/v%VERSION%/%NAME%-darwin-%ARCH%-%VERSION%.dmg</string>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Fathom.app</string>
+				<key>requirement</key>
+				<string>identifier "video.fathom.electron" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JH7GAYKCUH</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Fathom.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+	</array>
+</dict>
+</plist>
