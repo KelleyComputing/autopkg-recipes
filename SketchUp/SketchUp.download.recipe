@@ -12,8 +12,12 @@
 	<dict>
 		<key>NAME</key>
 		<string>SketchUp</string>
+    <key>DOWNLOAD_URL</key>
+    <string>https://help.sketchup.com/en/downloading-sketchup</string>
 		<key>MAJOR_RELEASE</key>
 		<string>2024</string>
+    <key>MINOR_RELEASE_RE</key>
+    <string>([\d.]+)-([\d.]+)-([\d.]+)</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -22,9 +26,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+        <key>re</key>
+        <string>%MINOR_RELEASE_RE%</string>
+        <key>result_output_var_name</key>
+        <string>MINOR_RELEASE</string>
 				<key>url</key>
-				<string>https://download.sketchup.com/SketchUp-%MAJOR_RELEASE%-([\d.]+)-([\d.]+)-([\d.]+).dmg</string>
+				<string>%DOWNLOAD_URL%</string>
 			</dict>
+      <key>Processor</key>
+      <string>URLTextSearcher</string>
+    </dict>
+    <dict>
+      <key>Arguments</key>
+      <dict>
+        <key>url</key>
+        <string>https://download.sketchup.com/SketchUp-%MAJOR_RELEASE%-%MINOR_RELEASE%.dmg</string>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
