@@ -17,7 +17,7 @@
 		<key>MAJOR_RELEASE</key>
 		<string>2024</string>
     <key>MINOR_RELEASE_RE</key>
-    <string>([\d.]+)-([\d.]+)-([\d.]+)</string>
+    <string>SketchUp-%MAJOR_RELEASE%-([\d.]+-[\d.]+-[\d.]+).dmg</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -26,7 +26,7 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-        <key>re</key>
+        <key>re_pattern</key>
         <string>%MINOR_RELEASE_RE%</string>
         <key>result_output_var_name</key>
         <string>MINOR_RELEASE</string>
@@ -41,6 +41,7 @@
       <dict>
         <key>url</key>
         <string>https://download.sketchup.com/SketchUp-%MAJOR_RELEASE%-%MINOR_RELEASE%.dmg</string>
+      </dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
