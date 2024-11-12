@@ -3,17 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Download the latest version of Miro. Use `darwin` or `darwin-arm64` to select architecture.</string>
+	<string>Download the latest version of Miro. Use `darwin` or `darwin-arm64` to select downloaded app architecture.</string>
 	<key>Identifier</key>
 	<string>com.github.KelleyComputing.download.Miro</string>
 	<key>Input</key>
 	<dict>
-		<key>ARCH</key>
+		<key>DOWNLOAD_ARCH</key>
 		<string>darwin-arm64</string>
+		<key>ARCH</key>
+		<string>arm64</string>
 		<key>NAME</key>
 		<string>Miro</string>
 		<key>PRODUCT_URL</key>
-		<string>https://desktop.miro.com/platforms/%ARCH%/Install-Miro.dmg</string>
+		<string>https://desktop.miro.com/platforms/%DOWNLOAD_ARCH%/Install-Miro.dmg</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
