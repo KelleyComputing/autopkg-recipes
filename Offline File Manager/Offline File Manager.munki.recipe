@@ -16,14 +16,14 @@
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>net.KelleyComputing.download.OfflineFileManager</string>
+	<string>net.KelleyComputing.pkg.OfflineFileManager</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Offline File Manager.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Offline File Manager-%VERSION%.pkg</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
