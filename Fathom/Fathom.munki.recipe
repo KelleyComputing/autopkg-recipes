@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Download the latest version of Fathom and import into Munki. Use `x64` or `arm64` to select architecture.</string>
+	<string>Download the latest version of Fathom and import into Munki. Use `x86_64` or `arm64` to select architecture.</string>
 	<key>Identifier</key>
 	<string>com.github.KelleyComputing.munki.Fathom</string>
 	<key>Input</key>
@@ -14,27 +14,6 @@
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>Fathom</string>
-		<key>pkginfo</key>
-		<dict>
-			<key>catalogs</key>
-			<array>
-				<string>testing</string>
-			</array>
-			<key>description</key>
-			<string> </string>
-			<key>developer</key>
-			<string>Fathom Video, Inc.</string>
-			<key>display_name</key>
-			<string>Fathom</string>
-			<key>name</key>
-			<string>%NAME%</string>
-			<key>unattended_install</key>
-			<true/>
-			<key>supported_architectures</key>
-         		<array>
-            		<string>%ARCH%</string>
-         		</array>
-		</dict>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -49,6 +28,27 @@
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>pkginfo</key>
+				<dict>
+					<key>catalogs</key>
+					<array>
+						<string>testing</string>
+					</array>
+					<key>description</key>
+					<string> </string>
+					<key>developer</key>
+					<string>Fathom Video, Inc.</string>
+					<key>display_name</key>
+					<string>Fathom</string>
+					<key>name</key>
+					<string>%NAME%</string>
+					<key>unattended_install</key>
+					<true/>
+					<key>supported_architectures</key>
+         				<array>
+	            				<string>%ARCH%</string>
+         				</array>
+				</dict>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
