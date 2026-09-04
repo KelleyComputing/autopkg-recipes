@@ -42,6 +42,7 @@
 					<string>%NAME%</string>
 					<key>unattended_install</key>
 					<true/>
+        </dict>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
