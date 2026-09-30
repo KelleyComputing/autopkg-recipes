@@ -13,11 +13,9 @@
 		<key>NAME</key>
 		<string>Fathom</string>
 		<key>PRODUCT_URL</key>
-		<string>https://fathom.video/download</string>
+		<string>https://fathom.video/download/macos</string>
 		<key>DOWNLOAD_BASE_URL</key>
-		<string>https://storage.googleapis.com/electron_releases</string>
-		<key>VERSION_RE_PATTERN</key>
-		<string>%NAME%-darwin-%ARCH%-([\d.]+).dmg</string>
+		<string>https://electron-update.fathom.video/download/dmg_arm64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -26,21 +24,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-                <key>re_pattern</key>
-                <string>%VERSION_RE_PATTERN%</string>
-                <key>url</key>
-                <string>%PRODUCT_URL%</string>
-                <key>result_output_var_name</key>
-                <string>VERSION</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-                <key>url</key>
-                <string>%DOWNLOAD_BASE_URL%/v%VERSION%/%NAME%-darwin-%ARCH%-%VERSION%.dmg</string>
+        <key>url</key>
+        <string>%DOWNLOAD_BASE_URL%</string>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 			</dict>
