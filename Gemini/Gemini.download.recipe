@@ -14,12 +14,8 @@
 		<string>Gemini</string>
     <key>RELEASE</key>
     <string>release2</string>
-		<key>PRODUCT_URL</key>
-		<string>https://gemini.google/mac/</string>
-		<key>DOWNLOAD_BASE_URL</key>
-		<string>https://dl.google.com</string>
-		<key>VERSION_RE_PATTERN</key>
-		<string>%DOWNLOAD_BASE_URL%/%RELEASE%/([\S]+)/release/Gemini.dmg</string>
+		<key>DOWNLOAD_URL</key>
+		<string>https://gemini.google/download/mac/</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -28,21 +24,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-                <key>re_pattern</key>
-                <string>%VERSION_RE_PATTERN%</string>
-                <key>url</key>
-                <string>%PRODUCT_URL%</string>
-                <key>result_output_var_name</key>
-                <string>VERSION</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-        <key>url</key>
-        <string>%DOWNLOAD_BASE_URL%/%RELEASE%/%VERSION%/release/%NAME%.dmg</string>
+        			<key>url</key>
+      				<string>%DOWNLOAD_URL%</string>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 			</dict>
