@@ -12,6 +12,10 @@
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>Jabra Direct</string>
+    <key>PKG_NAME</key>
+    <string>JabraDirectSetup.pkg</string>
+    <key>MUNKI_REPO</key>
+    <string>/tmp/munki</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -22,15 +26,13 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-				<key>purge_destination</key>
-				<true/>
+				<key>pkg_path</key>
+				<string>%pathname%/%PKG_NAME%</string>
+        <key>extract_root</key>
+        <string>%pathname%/%NAME%</string>
 			</dict>
 			<key>Processor</key>
-			<string>Unarchiver</string>
+			<string>PkgExtractor</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
