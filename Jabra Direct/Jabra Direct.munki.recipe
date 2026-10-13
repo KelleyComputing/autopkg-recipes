@@ -12,27 +12,24 @@
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>Jabra Direct</string>
-    <key>PKG_NAME</key>
+    <key>MUNKIIMPORT_PKG_NAME</key>
     <string>JabraDirectSetup.pkg</string>
-    <key>MUNKI_REPO</key>
-    <string>/tmp/munki</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.KelleyComputing.download.JabraDirect</string>
 	<key>Process</key>
-	<array>
-		<dict>
+	<array><dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_path</key>
-				<string>%pathname%/%PKG_NAME%</string>
-        <key>extract_root</key>
-        <string>%pathname%/%NAME%</string>
+				<key>input_path</key>
+				<string>%pathname%/%MUNKIIMPORT_PKG_NAME%</string>
+				<key>requirement</key>
+				<string>identifier "com.jabra.directonline" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "55LV32M29R"</string>
 			</dict>
-			<key>Processor</key>
-			<string>PkgExtractor</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
